@@ -7,9 +7,11 @@ const useBodyScroll = (handler: ScrollHandler) => {
 
   useEffect(() => {
     document.body.addEventListener('scroll', handleScroll);
+    document.body.addEventListener('wheel', handleScroll);
 
     return () => {
       document.body.removeEventListener('scroll', handleScroll);
+      document.body.removeEventListener('wheel', handleScroll);
     };
   });
   useEffect(() => {
@@ -17,9 +19,8 @@ const useBodyScroll = (handler: ScrollHandler) => {
   }, [handler]);
 
   const handleScroll = useCallback((event: Event) => {
-    const { target } = event as any;
     handlers.current.forEach((handler) => {
-      handler(target.scrollTop);
+      handler(window.scrollY);
     });
   }, []);
 };
