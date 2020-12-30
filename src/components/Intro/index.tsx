@@ -1,16 +1,26 @@
 import React, { FC } from 'react';
-import './Intro.less';
+import useBodyScroll from '../../hooks/useBodyScroll';
+import ExplicitWord from '../ExplicitWord';
+import './Intro.scss';
 
-interface Props {
-
-}
+interface Props {}
 
 const Intro: FC<Props> = () => {
+  useBodyScroll((scrollTop: number) => {});
+
   return (
     <article className="Intro">
-      <h1>Twenty f*cking twenty</h1>    
+      <div className="Intro-content">
+        <h1 className="Intro-title">
+          Twenty
+          <br />
+          <ExplicitWord>f*cking</ExplicitWord>
+          <br />
+          twenty
+        </h1>
+      </div>
     </article>
-  )
+  );
 };
 
 export default Intro;

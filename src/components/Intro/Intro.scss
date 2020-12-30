@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
+.Intro {
+  display: flex;
+  background-image: url(../../assets/medical-mask.svg);
+  background-repeat: repeat round;
+  background-size: 50px;
+  min-height: 100%;
+
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  &-title {
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 5rem;
+  }
+}
