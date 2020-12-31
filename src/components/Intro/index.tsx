@@ -1,4 +1,6 @@
 import React, { CSSProperties, FC } from 'react';
+import useElementSize from '../../hooks/useElementSize';
+import useWindowSize from '../../hooks/useWindowSize';
 import ExplicitWord from '../ExplicitWord';
 import ScrollTween from '../ScrollTween';
 import './Intro.scss';
@@ -6,24 +8,54 @@ import './Intro.scss';
 interface Props {}
 
 const Intro: FC<Props> = () => {
+  const { height: windowHeight, width: windowWidth } = useWindowSize();
+  const [{ height: elementHeight, width: elementWidth }, elementRef] = useElementSize<HTMLDivElement>();
+
+  const elementX = (windowWidth - elementWidth) / 2;
+  const elementY = (windowHeight - elementHeight) / 2;
+
   return (
     <article className="Intro">
       <div className="Intro-content">
-        <ScrollTween start={0} stop={200} from={{ opacity: 1 }} to={{ opacity: 0.5 }}>
-          {IntroContent}
+        <ScrollTween
+          start={0}
+          stop={400}
+          from={{ scale: 1 }}
+          to={{ scale: 0.3 }}
+          elementX={elementX}
+          elementY={elementY}
+          elementRef={elementRef}
+        >
+          {IntroTranslate}
         </ScrollTween>
       </div>
     </article>
   );
 };
 
-const IntroContent = (style: CSSProperties) => {
+const IntroTranslate = (style: CSSProperties, { elementRef, elementX, elementY }: any) => {
   return (
-    <h1 className="Intro-title" style={style}>
+    <ScrollTween
+      start={401}
+      stop={800}
+      from={{ x: elementX, y: elementY }}
+      to={{ x: -0.17 * elementX, y: -0.4 * elementY }}
+      elementRef={elementRef}
+      additionalStyle={style}
+    >
+      {IntroContent}
+    </ScrollTween>
+  );
+};
+
+const IntroContent = (style: CSSProperties, { elementRef, additionalStyle }: any) => {
+  const transform = `${style.transform} ${additionalStyle.transform}`;
+
+  return (
+    <h1 className="Intro-title" style={{ transform }} ref={elementRef}>
       Twenty
       <br />
       <ExplicitWord>f*cking</ExplicitWord>
-      <br />
       twenty
     </h1>
   );

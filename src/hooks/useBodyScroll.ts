@@ -1,4 +1,4 @@
-import { MutableRefObject, useCallback, useEffect, useRef } from 'react';
+import { DependencyList, MutableRefObject, useCallback, useEffect, useRef } from 'react';
 
 type ScrollHandler = (scrollY: number) => void;
 
@@ -8,17 +8,20 @@ const useBodyScroll = (handler: ScrollHandler) => {
   useEffect(() => {
     document.body.addEventListener('scroll', handleScroll);
     document.body.addEventListener('wheel', handleScroll);
+    document.body.addEventListener('keydown', handleScroll);
+    document.body.addEventListener('resize', handleScroll);
+
+    handlers.current.push(handler);
 
     return () => {
       document.body.removeEventListener('scroll', handleScroll);
       document.body.removeEventListener('wheel', handleScroll);
+      document.body.removeEventListener('keydown', handleScroll);
+      document.body.removeEventListener('resize', handleScroll);
     };
-  });
-  useEffect(() => {
-    handlers.current.push(handler);
-  }, [handler]);
+  }, []);
 
-  const handleScroll = useCallback((event: Event) => {
+  const handleScroll = useCallback(() => {
     handlers.current.forEach((handler) => {
       handler(window.scrollY);
     });

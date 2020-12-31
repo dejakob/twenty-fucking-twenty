@@ -1,0 +1,25 @@
+.VerticalTitle {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 1px #000 solid;
+  border-radius: 24px;
+  font-weight: 100;
+
+  padding: 8px;
+  margin: 0;
+
+  &-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &-char {
+    display: block;
+    text-transform: uppercase;
+  }
+}
