@@ -1,6 +1,7 @@
 git reset --hard
 git clean -fd
 git checkout master
+npm ci
 NODE_ENV=production npm run build
 mkdir docs
 cp -R build/* docs/*
