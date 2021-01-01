@@ -33,7 +33,7 @@ const January = () => {
 
 const JanuaryContent = () => {
   const { width: windowWidth, height: windowHeight } = useWindowSize();
-  const photoSize = Math.min(windowWidth * 0.8, windowHeight);
+  const photoSize = Math.min(windowWidth, windowHeight);
 
   return (
     <>
