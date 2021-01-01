@@ -1,3 +1,15 @@
+@keyframes FiredAtLetgo-flamesAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .FiredAtLetgo {
   position: absolute;
   top: 0;
@@ -19,18 +31,24 @@
   &-title {
     font-size: 3rem;
     font-weight: 100;
+    margin: 0;
   }
 
   &-paragraph {
     font-family: 'Reenie Beanie', cursive;
     font-size: 2.4rem;
     text-align: center;
+    margin: 0;
   }
 
   &-emojis {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
     text-align: center;
-    margin-top: 48px;
-    text-shadow: rgba(33,33,33,0.7) 2px 2px;
+    text-shadow: rgba(33, 33, 33, 0.7) 2px 2px;
+    animation: FiredAtLetgo-flamesAnimation infinite 2s;
+  }
+
+  & > * + * {
+    margin-top: 32px;
   }
 }

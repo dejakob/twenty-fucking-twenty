@@ -31,4 +31,19 @@
     transform: rotate(-10deg);
     right: 0;
   }
+
+  &-gramLink {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    opacity: 0.3;
+    transition: opacity 0.4s;
+
+    &:hover {
+      opacity: 0.6;
+    }
+    &:active {
+      opacity: 1;
+    }
+  }
 }

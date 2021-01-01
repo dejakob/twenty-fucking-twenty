@@ -1,4 +1,5 @@
-import React, { CSSProperties, FC } from 'react';
+import React, { CSSProperties, FC, useState } from 'react';
+import useBodyScroll from '../../hooks/useBodyScroll';
 import useElementSize from '../../hooks/useElementSize';
 import useWindowSize from '../../hooks/useWindowSize';
 import ExplicitWord from '../ExplicitWord';
@@ -8,11 +9,20 @@ import './Intro.scss';
 interface Props {}
 
 const Intro: FC<Props> = () => {
+  const [visible, setVisibility] = useState(true);
   const { height: windowHeight, width: windowWidth } = useWindowSize();
   const [{ height: elementHeight, width: elementWidth }, elementRef] = useElementSize<HTMLDivElement>();
 
   const elementX = (windowWidth - elementWidth) / 2;
   const elementY = (windowHeight - elementHeight) / 2;
+
+  useBodyScroll((scrollTop: number) => {
+    setVisibility && setVisibility(scrollTop <= 1200);
+  });
+
+  if (!visible) {
+    return null;
+  }
 
   return (
     <article className="Intro">

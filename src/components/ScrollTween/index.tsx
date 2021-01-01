@@ -11,7 +11,7 @@ interface TweenPosition {
   left?: number;
 }
 interface Props {
-  children: (style: CSSProperties, childProps: { [key: string]: any }) => ReactElement;
+  children: (style: CSSProperties, childProps?: any) => ReactElement;
   start: number;
   stop: number;
   from: TweenPosition;

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import February from '../February';
 import FiredAtLetgo from '../FiredAtLetgo';
 import Intro from '../Intro';
 import January from '../January';
@@ -10,6 +11,7 @@ function App() {
       <Intro />
       <January />
       <FiredAtLetgo />
+      <February />
     </main>
   );
 }

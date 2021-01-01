@@ -7,9 +7,12 @@ const useElementSize = <ElementType>(): [{ height: number; width: number }, RefO
   useEffect(() => {
     if (elementRef.current) {
       const { height, width } = (elementRef.current as any).getBoundingClientRect();
-      setSize({ height, width });
+
+      if (size.height !== height || size.width !== width) {
+        setSize({ height, width });
+      }
     }
-  }, []);
+  }, [elementRef, size.height, size.width]);
 
   return [size, elementRef];
 };

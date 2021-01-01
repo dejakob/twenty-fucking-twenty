@@ -1,76 +1,60 @@
-import React, { CSSProperties, FC, useState } from 'react';
-import useBodyScroll from '../../hooks/useBodyScroll';
+import React from 'react';
 import useWindowSize from '../../hooks/useWindowSize';
 import InstagramPost from '../InstragamPost';
 import Quote from '../Quote';
-import ScrollTween from '../ScrollTween';
 import VerticalTitle from '../VerticalTitle';
 import portImage from '../../assets/port-january.jpg';
 import arrozConPollo from '../../assets/arroz-con-pollo-january.jpg';
+import Month from '../Month';
 import './January.scss';
-import useElementSize from '../../hooks/useElementSize';
 
-interface Props {}
+export const START_SCROLL_POSITION = 800;
+export const SCROLL_SLIDE_END_POSITION = START_SCROLL_POSITION + 400;
+export const SCROLL_CONTENT_SLIDE_START = SCROLL_SLIDE_END_POSITION + 100;
+export const CONTENT_SCROLL_DURATION = 400;
+export const SCROLL_CONTENT_SLIDE_END = SCROLL_CONTENT_SLIDE_START + CONTENT_SCROLL_DURATION;
+export const END_SCROLL_POSITION = SCROLL_CONTENT_SLIDE_END + 400;
+export const HIDE_POSITION = END_SCROLL_POSITION + 400;
 
-const January: FC<Props> = () => {
-  const [visible, setVisibility] = useState(false);
-  const { height: windowHeight, width: windowWidth } = useWindowSize();
-
-  useBodyScroll((scrollTop: number) => {
-    setVisibility(scrollTop > 800);
-  });
-
-  if (!visible) {
-    return null;
-  }
-
+const January = () => {
   return (
-    <ScrollTween start={801} stop={1200} from={{ y: windowHeight }} to={{ y: 0 }} windowWidth={windowWidth}>
-      {JanuaryContainer}
-    </ScrollTween>
+    <Month
+      scrollSlideStart={START_SCROLL_POSITION}
+      scrollSlideEnd={SCROLL_SLIDE_END_POSITION}
+      scrollRemovalPoint={HIDE_POSITION}
+      contentScrollDuration={CONTENT_SCROLL_DURATION}
+      className="January"
+      title="January"
+    >
+      <JanuaryContent />
+    </Month>
   );
 };
 
-const JanuaryContainer = (style: CSSProperties, { windowWidth }: any) => {
-  const [{ width: contentWidth }, contentRef] = useElementSize();
-
-  return (
-    <section className="January" style={style}>
-      <ScrollTween
-        start={1301}
-        stop={1800}
-        from={{ x: 40 }}
-        to={{ x: -1 * (contentWidth - windowWidth) }}
-        contentRef={contentRef}
-      >
-        {JanuaryContent}
-      </ScrollTween>
-    </section>
-  );
-};
-
-const JanuaryContent = (style: CSSProperties, { contentRef }: any) => {
+const JanuaryContent = () => {
   const { width: windowWidth, height: windowHeight } = useWindowSize();
+  const photoSize = Math.min(windowWidth * 0.8, windowHeight);
 
   return (
-    <div className="January-content" style={style} ref={contentRef}>
-      <VerticalTitle>January</VerticalTitle>
+    <>
       <Quote author="Jakob Kerkhove - January 2020">This is gonna be my year</Quote>
       <InstagramPost
         imageSrc={portImage}
         imageAlt="Barcelona port - January"
-        height={Math.min(windowWidth * 0.8, windowHeight)}
-        width={Math.min(windowWidth * 0.8, windowHeight)}
+        height={photoSize}
+        width={photoSize}
+        url="https://www.instagram.com/p/B7BG4S_ozkX"
       />
       <InstagramPost
         imageSrc={arrozConPollo}
         imageAlt="Arroz con Pollo - January"
-        height={Math.min(windowWidth * 0.8, windowHeight)}
-        width={Math.min(windowWidth * 0.8, windowHeight)}
+        height={photoSize}
+        width={photoSize}
         note="Yeah yeah, I started cooking, but don't get used to it"
+        url="https://www.instagram.com/p/B7WhK2GoWMT"
       />
       <Quote author="Jakob Kerkhove - just before getting 🧯">Viva la vida loca 🍹🕺</Quote>
-    </div>
+    </>
   );
 };
 
