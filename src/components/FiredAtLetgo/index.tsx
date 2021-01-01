@@ -17,7 +17,7 @@ const FiredAtLetgo: FC<Props> = () => {
   const { height: windowHeight } = useWindowSize();
 
   useBodyScroll((scrollTop: number) => {
-    setVisibility(scrollTop > START_SCROLL_POSITION);
+    setVisibility(scrollTop > START_SCROLL_POSITION && scrollTop <= END_SCROLL_POSITION + 500);
   });
 
   if (!visible) {

@@ -4,11 +4,13 @@ import './Achievement.scss';
 import MicrophoneIcon from '../MicrophoneIcon';
 import AwardIcon from '../AwardIcon';
 import TrophyIcon from '../TrophyIcon';
+import BriefcaseIcon from '../BriefcaseIcon';
 
 export enum TYPES {
   TALK = 'Talk',
   AWARD = 'Award',
   TROPHY = 'Trophy',
+  WORK = 'Work'
 }
 
 interface Props {
@@ -27,6 +29,9 @@ const typeToIcon = (type: TYPES) => {
     case TYPES.TROPHY:
       return TrophyIcon;
 
+    case TYPES.WORK:
+      return BriefcaseIcon;
+
     default:
       return null;
   }
@@ -37,7 +42,7 @@ const Achievement: FC<Props> = ({ type, children }: Props) => {
 
   return (
     <div className="Achievement">
-      <div className={`Achievement-icon${type}`}>{icon}</div>
+      <div className={`Achievement-icon Achievement-icon${type}`}>{icon}</div>
       <h3 className="Achievement-title">Achievement unlocked</h3>
       <p className="Achievement-paragraph">{children}</p>
     </div>

@@ -3,6 +3,7 @@ import February from '../February';
 import FiredAtLetgo from '../FiredAtLetgo';
 import Intro from '../Intro';
 import January from '../January';
+import March from '../March';
 import './App.scss';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <January />
       <FiredAtLetgo />
       <February />
+      <March />
     </main>
   );
 }

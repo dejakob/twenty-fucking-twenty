@@ -16,6 +16,9 @@
 .Achievement {
   margin: 0 32px;
 
+  &-icon {
+    text-align: center;
+  }
   &-iconTalk {
     height: 200px;
     width: 200px;
@@ -41,5 +44,6 @@
   }
   &-paragraph {
     text-align: center;
+    line-height: 1.6rem;
   }
 }
