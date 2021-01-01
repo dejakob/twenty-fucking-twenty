@@ -6,10 +6,12 @@ import Month from '../Month';
 import Quote from '../Quote';
 import Separator from '../Separator';
 import PlaceVisited from '../PlaceVisited';
+import PlaneIcon from '../PlaneIcon';
 
 import greenVitaImage from '../../assets/greenvita-february.jpg';
 import pubLimerickImage from '../../assets/limerick.jpg';
 import belgiumImage from '../../assets/belgium.jpg';
+import Blog from '../Blog';
 
 export const START_SCROLL_POSITION = END_SCROLL_LAST_ITEM;
 export const END_SCROLL_POSITION = START_SCROLL_POSITION + 400;
@@ -61,11 +63,24 @@ const FebruaryComponent = () => {
         note="Potvolkoffie Limerick, why did you have to close?"
       />
       <Separator />
-      <PlaceVisited backgroundImage={belgiumImage} placeName="Belgium">
+      <PlaceVisited
+        icon={<PlaneIcon height={64} width={64} color="#fff" />}
+        backgroundImage={belgiumImage}
+        placeName="Belgium"
+      >
         Just to check if the country still exists
       </PlaceVisited>
       <Separator />
-      Blog: How much JavaScript do you actually need? And what for?
+      <Blog
+        title="How much JavaScript do you actually need? And what for?"
+        url="https://levelup.gitconnected.com/how-much-javascript-do-you-actually-need-and-what-for-2e0ae47aa9cc"
+      >
+        Since I’m living in Barcelona, I visit comedy/storytelling events from time to time. However, I was having some
+        trouble with which event was what day as they all had different Facebook pages, etc. Then I remembered I was a
+        developer and decided to create a simple list with all the upcoming events myself. As I wanted to create
+        something quickly, I decided to bootstrap a project with Next.js so I could use both server-side and client-side
+        React.
+      </Blog>
     </>
   );
 };
