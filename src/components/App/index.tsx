@@ -10,7 +10,11 @@ import './App.scss';
 import May from '../May';
 import June from '../June';
 import July from '../July';
-import August, { HIDE_POSITION } from '../August';
+import August from '../August';
+import September from '../August';
+import October from '../August';
+import November from '../August';
+import December, { HIDE_POSITION } from '../August';
 
 function App() {
   const { height: windowHeight } = useWindowSize();
@@ -30,6 +34,10 @@ function App() {
       <June />
       <July />
       <August />
+      <September />
+      <October />
+      <November />
+      <December />
     </main>
   );
 }
