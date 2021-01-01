@@ -27,6 +27,10 @@
     filter: grayscale(0);
   }
 
+  &:active {
+    filter: saturate(1.5);
+  }
+
   & + &:nth-child(2n) #{$self}-figCaption {
     transform: rotate(-10deg);
     right: 0;

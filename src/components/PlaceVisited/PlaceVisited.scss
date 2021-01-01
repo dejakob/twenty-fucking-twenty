@@ -1,0 +1,62 @@
+@keyframes PlaceVisitedIconAnimation {
+  0% {
+    transform: translateX(-400%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(400%);
+    opacity: 0;
+  }
+}
+
+.PlaceVisited {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  min-width: 80vh;
+  min-width: #{'min(80vh, 80vw)'};
+  min-height: 80vh;
+  min-height: #{'min(80vh, 80vw)'};
+  max-width: 500px;
+  max-height: 500px;
+
+  border-radius: 8px;
+  overflow: hidden;
+
+  &-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(0, 145, 212, 0.8);
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  &-title {
+    font-size: 2rem;
+    margin: 16px 0 0 0;
+  }
+
+  &-paragraph {
+    font-size: 3rem;
+    font-family: 'Reenie Beanie', cursive;
+    text-align: center;
+  }
+
+  .icon {
+    animation: PlaceVisitedIconAnimation 3s 2s infinite;
+  }
+}

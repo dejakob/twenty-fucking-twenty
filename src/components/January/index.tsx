@@ -2,11 +2,11 @@ import React from 'react';
 import useWindowSize from '../../hooks/useWindowSize';
 import InstagramPost from '../InstragamPost';
 import Quote from '../Quote';
-import VerticalTitle from '../VerticalTitle';
 import portImage from '../../assets/port-january.jpg';
 import arrozConPollo from '../../assets/arroz-con-pollo-january.jpg';
 import Month from '../Month';
 import './January.scss';
+import Separator from '../Separator';
 
 export const START_SCROLL_POSITION = 800;
 export const SCROLL_SLIDE_END_POSITION = START_SCROLL_POSITION + 400;
@@ -37,7 +37,9 @@ const JanuaryContent = () => {
 
   return (
     <>
+      <Separator />
       <Quote author="Jakob Kerkhove - January 2020">This is gonna be my year</Quote>
+      <Separator />
       <InstagramPost
         imageSrc={portImage}
         imageAlt="Barcelona port - January"
@@ -53,6 +55,7 @@ const JanuaryContent = () => {
         note="Yeah yeah, I started cooking, but don't get used to it"
         url="https://www.instagram.com/p/B7WhK2GoWMT"
       />
+      <Separator />
       <Quote author="Jakob Kerkhove - just before getting 🧯">Viva la vida loca 🍹🕺</Quote>
     </>
   );
