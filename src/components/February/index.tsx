@@ -53,6 +53,7 @@ const FebruaryComponent = () => {
         url="https://www.instagram.com/p/B8hUXDgIekz"
         note="Potvolkoffie Limerick, why did you have to close?"
       />
+      Event: trip to Belgium while still allowed // Blog: How much JavaScript do you actually need? And what for?
     </>
   );
 };
