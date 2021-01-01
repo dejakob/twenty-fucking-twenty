@@ -4,10 +4,10 @@ const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({ height: window.innerHeight, width: window.innerWidth });
 
   useEffect(() => {
-    document.body.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      document.body.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   });
 

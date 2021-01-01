@@ -9,7 +9,7 @@ const useBodyScroll = (handler: ScrollHandler) => {
     document.body.addEventListener('scroll', handleScroll);
     document.body.addEventListener('wheel', handleScroll);
     document.body.addEventListener('keydown', handleScroll);
-    document.body.addEventListener('resize', handleScroll);
+    window.addEventListener('resize', handleScroll);
 
     handlers.current.push(handler);
     handler(window.scrollY);
@@ -18,7 +18,7 @@ const useBodyScroll = (handler: ScrollHandler) => {
       document.body.removeEventListener('scroll', handleScroll);
       document.body.removeEventListener('wheel', handleScroll);
       document.body.removeEventListener('keydown', handleScroll);
-      document.body.removeEventListener('resize', handleScroll);
+      window.removeEventListener('resize', handleScroll);
     };
   }, []);
 
