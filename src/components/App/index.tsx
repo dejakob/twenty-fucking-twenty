@@ -4,6 +4,7 @@ import FiredAtLetgo from '../FiredAtLetgo';
 import Intro from '../Intro';
 import January from '../January';
 import March from '../March';
+import April from '../April';
 import './App.scss';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <FiredAtLetgo />
       <February />
       <March />
+      <April />
     </main>
   );
 }
