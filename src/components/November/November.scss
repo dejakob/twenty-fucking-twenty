@@ -1,0 +1,23 @@
+.November {
+  background-color: #075000;
+  color: #fff;
+
+  &:before {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #075000);
+  }
+
+  &-shrug {
+    font-size: 10rem;
+  }
+
+  .icon {
+    stroke: #fff;
+  }
+  .VerticalTitle {
+    border-color: #fff;
+  }
+  .Blog-readLink {
+    border-color: #fff;
+    color: #fff;
+  }
+}
