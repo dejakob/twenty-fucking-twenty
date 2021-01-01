@@ -10,7 +10,7 @@ const useBodyScroll = (handler: ScrollHandler) => {
     window.addEventListener('resize', handleScroll);
 
     handlers.current.push(handler);
-    handler(window.scrollY);
+    setTimeout(() => handler(window.scrollY), 0);
 
     return () => {
       document.removeEventListener('scroll', handleScroll);
