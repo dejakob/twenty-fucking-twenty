@@ -9,6 +9,8 @@ import PlaceVisited from '../PlaceVisited';
 import PlaneIcon from '../PlaneIcon';
 
 import greenVitaImage from '../../assets/greenvita-february.jpg';
+import greenVita2Image from '../../assets/greenvita2-february.jpg';
+import poblenouLightFestival from '../../assets/poblenou-light-festival.jpg';
 import pubLimerickImage from '../../assets/limerick.jpg';
 import belgiumImage from '../../assets/belgium.jpg';
 import Blog from '../Blog';
@@ -61,6 +63,21 @@ const FebruaryComponent = () => {
         imageSrc={pubLimerickImage}
         url="https://www.instagram.com/p/B8hUXDgIekz"
         note="Potvolkoffie Limerick, why did you have to close?"
+      />{' '}
+      <InstagramPost
+        imageAlt="More healthy type of food"
+        height={photoSize}
+        width={photoSize}
+        imageSrc={greenVita2Image}
+        url="https://www.instagram.com/p/B8gZSvwoV9W"
+      />
+      <InstagramPost
+        imageAlt="Poblenou light festival"
+        height={photoSize}
+        width={photoSize}
+        imageSrc={poblenouLightFestival}
+        url="https://www.instagram.com/p/B8jwS_-ISIq"
+        note="Light festival in Poblenou"
       />
       <Separator />
       <PlaceVisited
