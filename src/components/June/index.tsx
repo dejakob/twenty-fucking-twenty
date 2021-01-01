@@ -11,6 +11,7 @@ import parkGuellImage from '../../assets/park-guell.jpg';
 import plazaEspanaImage from '../../assets/plaza-espana.jpg';
 import moritzImage from '../../assets/moritz.jpg';
 import tarragonaImage from '../../assets/tarragona.jpg';
+import tarragona2Image from '../../assets/tarragona2.jpg';
 
 export const START_SCROLL_POSITION = END_SCROLL_LAST_ITEM;
 export const END_SCROLL_POSITION = START_SCROLL_POSITION + 400;
@@ -68,6 +69,13 @@ const June = () => {
         Let's see what's around Barcelona
       </PlaceVisited>
       <Separator />
+      <InstagramPost
+        height={photoSize}
+        width={photoSize}
+        imageSrc={tarragona2Image}
+        imageAlt="Tarragona"
+        url="https://www.instagram.com/p/CB0kBaEooxZ"
+      />
     </Month>
   );
 };

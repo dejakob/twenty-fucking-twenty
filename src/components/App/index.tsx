@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import useWindowSize from '../../hooks/useWindowSize';
 import February from '../February';
 import FiredAtLetgo from '../FiredAtLetgo';
 import Intro from '../Intro';
@@ -7,13 +8,14 @@ import March from '../March';
 import April from '../April';
 import './App.scss';
 import May from '../May';
-import June, { HIDE_POSITION } from '../June';
-import useWindowSize from '../../hooks/useWindowSize';
+import June from '../June';
+import July from '../July';
+import August, { HIDE_POSITION } from '../August';
 
 function App() {
   const { height: windowHeight } = useWindowSize();
   useEffect(() => {
-    document.body.querySelector('#root')!.setAttribute('style', `height: ${HIDE_POSITION + windowHeight}px`);
+    document.body.querySelector('#root')!.setAttribute('style', `height: ${HIDE_POSITION - 1}px`);
   }, [windowHeight]);
 
   return (
@@ -26,6 +28,8 @@ function App() {
       <April />
       <May />
       <June />
+      <July />
+      <August />
     </main>
   );
 }

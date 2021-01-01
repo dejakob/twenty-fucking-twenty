@@ -1,0 +1,15 @@
+.July {
+  background-color: #d26100;
+  color: #fff;
+
+  &:before {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #d26100);
+  }
+
+  .icon {
+    stroke: #fff;
+  }
+  .VerticalTitle {
+    border-color: #fff;
+  }
+}
