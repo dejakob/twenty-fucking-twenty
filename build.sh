@@ -4,7 +4,7 @@ git checkout master
 NODE_ENV=production npm run build
 mkdir docs
 cp -R build/* docs/*
-git checkout docs
+git checkout -b docs
 git add .
 git commit -am 'Build docs'
 git push origin docs
