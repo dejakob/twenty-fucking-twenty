@@ -5,17 +5,20 @@ import MicrophoneIcon from '../MicrophoneIcon';
 import AwardIcon from '../AwardIcon';
 import TrophyIcon from '../TrophyIcon';
 import BriefcaseIcon from '../BriefcaseIcon';
+import VirusIcon from '../VirusIcon';
 
 export enum TYPES {
   TALK = 'Talk',
   AWARD = 'Award',
   TROPHY = 'Trophy',
-  WORK = 'Work'
+  WORK = 'Work',
+  VIRUS = 'Virus'
 }
 
 interface Props {
   type: TYPES;
   children: ReactNode;
+  title?: string;
 }
 
 const typeToIcon = (type: TYPES) => {
@@ -32,18 +35,21 @@ const typeToIcon = (type: TYPES) => {
     case TYPES.WORK:
       return BriefcaseIcon;
 
+    case TYPES.VIRUS:
+      return VirusIcon;
+
     default:
       return null;
   }
 };
 
-const Achievement: FC<Props> = ({ type, children }: Props) => {
+const Achievement: FC<Props> = ({ type, title, children }: Props) => {
   const icon = typeToIcon(type)!({ color: '#333', height: 200, width: 200 });
 
   return (
     <div className="Achievement">
       <div className={`Achievement-icon Achievement-icon${type}`}>{icon}</div>
-      <h3 className="Achievement-title">Achievement unlocked</h3>
+      <h3 className="Achievement-title">{title || 'Achievement unlocked'}</h3>
       <p className="Achievement-paragraph">{children}</p>
     </div>
   );
