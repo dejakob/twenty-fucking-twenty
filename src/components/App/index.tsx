@@ -6,6 +6,7 @@ import January from '../January';
 import March from '../March';
 import April from '../April';
 import './App.scss';
+import May from '../May';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <February />
       <March />
       <April />
+      <May />
     </main>
   );
 }
