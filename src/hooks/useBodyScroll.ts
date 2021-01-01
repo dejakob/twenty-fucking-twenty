@@ -1,4 +1,4 @@
-import { DependencyList, MutableRefObject, useCallback, useEffect, useRef } from 'react';
+import { MutableRefObject, useCallback, useEffect, useRef } from 'react';
 
 type ScrollHandler = (scrollY: number) => void;
 
@@ -12,6 +12,7 @@ const useBodyScroll = (handler: ScrollHandler) => {
     document.body.addEventListener('resize', handleScroll);
 
     handlers.current.push(handler);
+    handler(window.scrollY);
 
     return () => {
       document.body.removeEventListener('scroll', handleScroll);

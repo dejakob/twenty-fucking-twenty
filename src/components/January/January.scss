@@ -1,6 +1,6 @@
 .January {
-  width: 100vw;
-  height: 70vh;
+  min-width: 100vw;
+  height: 100vh;
   background-color: #ffffff;
   position: absolute;
   top: 0;
@@ -10,7 +10,6 @@
   &-content {
     display: flex;
     align-items: center;
-    padding: 16px;
     height: 100%;
     box-sizing: border-box;
   }

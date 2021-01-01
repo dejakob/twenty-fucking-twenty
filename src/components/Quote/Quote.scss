@@ -1,0 +1,31 @@
+.Quote {
+  margin: 0 60px;
+
+  &-content {
+    font-size: 2.4rem;
+    text-align: center;
+    width: 500px;
+    max-width: 90vw;
+    margin-bottom: 16px;
+
+    &::before {
+      content: open-quote;
+    }
+    &::after {
+      content: close-quote;
+    }
+  }
+
+  &-author {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 100;
+    text-align: center;
+
+    &::before {
+      content: '>';
+      display: inline-block;
+      margin-right: 8px;
+    }
+  }
+}

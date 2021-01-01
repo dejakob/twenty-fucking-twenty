@@ -7,7 +7,16 @@
   }
 }
 
+@keyframes ExplicitWord-appear {
+  from {
+    transform: scale(0.01);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
 .ExplicitWord {
   color: #ff0000;
-  animation: ExplicitWordFade 0.4s infinite ease-in-out;
+  animation: ExplicitWordFade 0.4s infinite ease-in-out, ExplicitWord-appear 1s ease-in;
 }
