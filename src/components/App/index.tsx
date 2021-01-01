@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import February from '../February';
 import FiredAtLetgo from '../FiredAtLetgo';
 import Intro from '../Intro';
@@ -7,6 +7,7 @@ import March from '../March';
 import April from '../April';
 import './App.scss';
 import May from '../May';
+import June from '../June';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <March />
       <April />
       <May />
+      <June />
     </main>
   );
 }
