@@ -23,6 +23,12 @@
     text-shadow: aliceblue 1px 1px;
   }
 
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
   &:hover #{$self}-img {
     filter: saturate(1.5);
   }
