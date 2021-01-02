@@ -11,6 +11,7 @@
   &-figCaption {
     font-family: 'Reenie Beanie', cursive;
     transform: rotate(10deg);
+    transform-origin: right bottom;
     color: #fff;
     width: 60%;
 
@@ -28,6 +29,7 @@
 
   & + &:nth-child(2n) #{$self}-figCaption {
     transform: rotate(-10deg);
+    transform-origin: left bottom;
     right: 0;
   }
 
