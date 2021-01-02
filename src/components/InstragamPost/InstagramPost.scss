@@ -5,7 +5,6 @@
   position: relative;
 
   &-img {
-    filter: grayscale(0.5);
     transition: filter 0.4s;
   }
 
@@ -24,10 +23,6 @@
   }
 
   &:hover #{$self}-img {
-    filter: grayscale(0);
-  }
-
-  &:active {
     filter: saturate(1.5);
   }
 
