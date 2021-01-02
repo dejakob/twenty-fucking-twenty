@@ -14,8 +14,12 @@ interface Props {
 
 const InstagramPost: FC<Props> = ({ imageSrc, imageAlt, height, width, note, url, icon }: Props) => {
   return (
-    <figure className="InstagramPost">
-      <img className="InstagramPost-img" src={imageSrc} alt={imageAlt} height={height} width={width} />
+    <figure className="InstagramPost" style={{ minHeight: `${height}px`, minWidth: `${width}px` }}>
+      {imageSrc.match(/\.mp4$/) ? (
+        <video src={imageSrc} title={imageAlt} height={height} width={width} autoPlay />
+      ) : (
+        <img className="InstagramPost-img" src={imageSrc} alt={imageAlt} height={height} width={width} />
+      )}
       {note && <figcaption className="InstagramPost-figCaption">{note}</figcaption>}
       <a
         href={url}
