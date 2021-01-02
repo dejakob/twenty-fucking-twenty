@@ -85,13 +85,15 @@ const MonthSection = (
     allClassNames.push(className);
   }
 
+  const shouldAddHorizontalScroll = contentWidth > windowWidth;
+
   return (
     <section className={allClassNames.join(' ')} style={style}>
       <ScrollTween
         start={scrollContentSlideStart}
         stop={scrollContentSlideEnd}
-        from={{ x: 40 }}
-        to={{ x: -1 * (contentWidth - windowWidth) }}
+        from={{ x: 0 }}
+        to={shouldAddHorizontalScroll ? { x: -1 * (contentWidth - windowWidth) } : { x: 0 }}
         contentRef={contentRef}
         childNode={childNode}
         title={title}
