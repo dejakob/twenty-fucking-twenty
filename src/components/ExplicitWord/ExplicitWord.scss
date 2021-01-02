@@ -1,9 +1,12 @@
 @keyframes ExplicitWordFade {
-  from {
-    opacity: 0.8;
+  0% {
+    opacity: 0.6;
   }
-  to {
+  50% {
     opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
   }
 }
 
@@ -18,5 +21,6 @@
 
 .ExplicitWord {
   color: #ff0000;
-  animation: ExplicitWordFade 0.4s infinite ease-in-out, ExplicitWord-appear 1s ease-in;
+  animation: ExplicitWordFade 2s infinite ease-in-out, ExplicitWord-appear 1s ease-in;
+  font-family: 'Reenie Beanie', cursive;
 }

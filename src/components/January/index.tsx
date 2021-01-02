@@ -8,7 +8,7 @@ import Month from '../Month';
 import './January.scss';
 import Separator from '../Separator';
 
-export const START_SCROLL_POSITION = 800;
+export const START_SCROLL_POSITION = 0;
 export const SCROLL_SLIDE_END_POSITION = START_SCROLL_POSITION + 400;
 export const SCROLL_CONTENT_SLIDE_START = SCROLL_SLIDE_END_POSITION + 100;
 export const CONTENT_SCROLL_DURATION = 400;
