@@ -1,0 +1,72 @@
+.RidiculousCookieBanner {
+  margin: 0;
+  border: none;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  align-items: flex-end;
+
+  &-trigger {
+    position: absolute;
+    left: -999px;
+    opacity: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+
+  &-trigger:checked + & {
+    display: none;
+  }
+
+  &-content {
+    background-color: #fff;
+    width: 100%;
+    padding: 32px;
+  }
+
+  &-title {
+    margin: 0 0 16px 0;
+    font-size: 2rem;
+  }
+
+  &-paragraph {
+    font-size: 1rem;
+    line-height: 1.3rem;
+    max-width: 700px;
+  }
+
+  &-accept {
+    appearance: none;
+    border: none;
+    border-radius: 16px;
+    background-color: #333;
+    color: #fff;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    padding: 8px 16px;
+
+    transition: background-color 0.4s, color 0.4s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #666;
+    }
+    &:active {
+      background-color: #999;
+    }
+  }
+  &-trigger:focus + & &-accept {
+    outline: 2px #333 solid;
+  }
+}

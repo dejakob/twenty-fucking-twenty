@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 import useBodyScroll from '../../hooks/useBodyScroll';
 import ExplicitWord from '../ExplicitWord';
+import RidiculousCookieBanner from '../RidiculousCookieBanner';
 import './Intro.scss';
 
 interface Props {}
@@ -23,12 +24,9 @@ const Intro: FC<Props> = () => {
           Twenty <ExplicitWord>f*cking</ExplicitWord> twenty
         </h1>
         <h2 className="Intro-subtitle">According to dejakob</h2>
-        <small className="Intro-tip">
-          Please wear a face mask and use hand sanitizer when using this website!
-          <br />
-          Scroll down to explore
-        </small>
+        <small className="Intro-tip">Scroll down to explore</small>
       </div>
+      <RidiculousCookieBanner />
     </article>
   );
 };
