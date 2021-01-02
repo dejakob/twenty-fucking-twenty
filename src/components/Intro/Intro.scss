@@ -18,7 +18,7 @@
 
   &-content {
     opacity: 0;
-    animation: IntroFadeAnimation 1s 1s ease-in;
+    animation: IntroFadeAnimation 1s 2s ease-in;
     animation-fill-mode: forwards;
     background: rgba(0, 0, 0, 0.6);
     height: 100vh;
