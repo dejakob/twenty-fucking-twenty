@@ -13,12 +13,8 @@ const Intro: FC<Props> = () => {
     setVisibility && setVisibility(scrollTop <= 1200);
   });
 
-  if (!visible) {
-    return null;
-  }
-
   return (
-    <article className="Intro">
+    <article className="Intro" style={visible ? {} : { background: 'none' }}>
       <div className="Intro-content">
         <h1 className="Intro-title">
           Twenty <ExplicitWord>f*cking</ExplicitWord> twenty
