@@ -1,0 +1,51 @@
+.Outro {
+  color: #fff;
+  justify-content: center;
+  display: flex;
+  max-height: 100vh;
+  background-color: #333;
+
+  > * {
+    padding: 24px 0;
+  }
+
+  .Month-content {
+    display: block;
+  }
+
+  &:before {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #333);
+  }
+
+  &-disclaimerBox {
+    border-top: 1px solid #666;
+    max-width: 700px;
+    margin: 48px 16px 0 16px;
+    padding: 16px 0;
+    box-sizing: border-box;
+  }
+  &-disclaimerTitle {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+  }
+  &-disclaimer {
+    font-size: 0.8rem;
+    font-weight: 200;
+    text-align: justify;
+  }
+  &-disclaimerLink {
+    color: #fff;
+  }
+  &-innerContent {
+    background-color: #333;
+    padding-bottom: 200px;
+  }
+
+  .icon {
+    stroke: #fff;
+  }
+  .VerticalTitle {
+    border-color: #fff;
+  }
+}

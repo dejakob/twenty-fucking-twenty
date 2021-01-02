@@ -14,7 +14,8 @@ import August from '../August';
 import September from '../September';
 import October from '../October';
 import November from '../November';
-import December, { HIDE_POSITION } from '../December';
+import December from '../December';
+import Outro, { HIDE_POSITION } from '../Outro';
 
 function App() {
   const { height: windowHeight } = useWindowSize();
@@ -38,6 +39,7 @@ function App() {
       <October />
       <November />
       <December />
+      <Outro />
     </main>
   );
 }

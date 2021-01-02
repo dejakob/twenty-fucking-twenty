@@ -12,8 +12,9 @@ interface Props {
   scrollRemovalPoint: number;
   contentScrollDuration: number;
   children: ReactNode;
-  title: string;
+  title?: string;
   className?: string;
+  additionalScrollY?: number;
 }
 
 const Month: FC<Props> = ({
@@ -24,6 +25,7 @@ const Month: FC<Props> = ({
   title,
   className,
   children,
+  additionalScrollY,
 }: Props) => {
   const [visible, setVisibility] = useState(false);
   const { height: windowHeight, width: windowWidth } = useWindowSize();
@@ -42,7 +44,7 @@ const Month: FC<Props> = ({
       start={scrollSlideStart + 1}
       stop={scrollSlideEnd}
       from={{ y: windowHeight }}
-      to={{ y: 0 }}
+      to={{ y: -1 * (additionalScrollY || 0) }}
       windowWidth={windowWidth}
       className={className}
       childNode={children}
@@ -76,7 +78,7 @@ const MonthSection = (
     scrollContentSlideEnd: number;
     windowWidth: number;
     contentWidth: number;
-    title: string;
+    title?: string;
   },
 ) => {
   const allClassNames = ['Month'];
@@ -113,12 +115,12 @@ const MonthContent = (
   }: {
     childNode: ReactNode;
     contentRef: Ref<any>;
-    title: string;
+    title?: string;
   },
 ) => {
   return (
     <div className="Month-content" style={style} ref={contentRef}>
-      <VerticalTitle>{title}</VerticalTitle>
+      {title && <VerticalTitle>{title}</VerticalTitle>}
       {childNode}
     </div>
   );
