@@ -41,6 +41,7 @@ const March = () => {
       <Separator />
       <InstagramPost
         height={photoSize}
+        width={photoSize * 1.338}
         imageSrc={newJobImage}
         imageAlt="New job"
         url="https://www.linkedin.com/posts/jakob-kerkhove-4a987281_yaaaay-its-my-first-day-at-new-relic-inc-activity-6640253312312586240-n2Qr"

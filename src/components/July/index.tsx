@@ -32,6 +32,7 @@ const July = () => {
       <Separator />
       <InstagramPost
         height={photoSize}
+        width={photoSize * 0.8}
         imageSrc={storytellingImage}
         imageAlt="Storytelling @ Dorotea"
         url="https://www.instagram.com/p/CCE9kyKIAxy"

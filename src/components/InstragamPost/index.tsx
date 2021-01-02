@@ -6,7 +6,7 @@ interface Props {
   imageSrc: string;
   imageAlt: string;
   height: number;
-  width?: number;
+  width: number;
   url: string;
   note?: string;
   icon?: ReactNode;
