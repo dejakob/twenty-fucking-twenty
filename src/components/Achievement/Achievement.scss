@@ -12,6 +12,14 @@
     opacity: 1;
   }
 }
+@keyframes AchievementIconVirusAnimation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 .Achievement {
   margin: 0 32px;
@@ -36,6 +44,13 @@
       z-index: -1;
       transform: scale(0.5);
       animation: AchievementIconTalkAnimation 2s ease-in-out infinite;
+    }
+  }
+  & &-iconVirus {
+    .icon {
+      stroke: rgb(0, 189, 0);
+      animation: AchievementIconVirusAnimation 3s infinite;
+      animation-timing-function: linear;
     }
   }
   &-title {
