@@ -2,15 +2,11 @@
   color: #fff;
   justify-content: center;
   display: flex;
-  max-height: 100vh;
   background-color: #333;
+  padding-bottom: 100vh;
 
   > * {
     padding: 24px 0;
-  }
-
-  .Month-content {
-    display: block;
   }
 
   &:before {
@@ -39,13 +35,9 @@
   }
   &-innerContent {
     background-color: #333;
-    padding-bottom: 200px;
   }
 
   .icon {
     stroke: #fff;
-  }
-  .VerticalTitle {
-    border-color: #fff;
   }
 }

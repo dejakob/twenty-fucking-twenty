@@ -14,13 +14,13 @@ const Intro: FC<Props> = () => {
   });
 
   return (
-    <article className="Intro" style={visible ? {} : { background: 'none' }}>
+    <article className="Intro" style={visible ? {} : { background: '#333' }}>
       <div className="Intro-content">
         <h1 className="Intro-title">
           Twenty <ExplicitWord>f*cking</ExplicitWord> twenty
         </h1>
         <h2 className="Intro-subtitle">According to dejakob</h2>
-        <small className="Intro-tip">Scroll down to explore</small>
+        {visible && <small className="Intro-tip">Scroll down to explore</small>}
       </div>
       <RidiculousCookieBanner />
     </article>

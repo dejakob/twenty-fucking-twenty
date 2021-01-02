@@ -24,23 +24,25 @@ function App() {
   }, [windowHeight]);
 
   return (
-    <main className="App">
-      <Intro />
-      <January />
-      <FiredAtLetgo />
-      <February />
-      <March />
-      <April />
-      <May />
-      <June />
-      <July />
-      <August />
-      <September />
-      <October />
-      <November />
-      <December />
-      <Outro />
-    </main>
+    <>
+      <main className="App">
+        <Intro />
+        <January />
+        <FiredAtLetgo />
+        <February />
+        <March />
+        <April />
+        <May />
+        <June />
+        <July />
+        <August />
+        <September />
+        <October />
+        <November />
+        <December />
+        <Outro />
+      </main>
+    </>
   );
 }
 

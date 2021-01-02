@@ -3,32 +3,25 @@ import { END_OF_ALL_SCROLL as END_SCROLL_LAST_ITEM } from '../December';
 
 import './Outro.scss';
 import Achievement, { TYPES as ACHIEVEMENT_TYPE } from '../Achievement';
-import useElementSize from '../../hooks/useElementSize';
-import { Ref } from 'react';
 import useWindowSize from '../../hooks/useWindowSize';
 
 export const START_SCROLL_POSITION = END_SCROLL_LAST_ITEM;
 export const END_SCROLL_POSITION = START_SCROLL_POSITION + 400;
-export const CONTENT_SCROLL_DURATION = 800;
-export const END_OF_ALL_SCROLL = END_SCROLL_POSITION + 100 + CONTENT_SCROLL_DURATION + 200;
-export const HIDE_POSITION = END_OF_ALL_SCROLL + 1200;
+export const HIDE_POSITION = END_SCROLL_POSITION + 400;
 
 const Outro = () => {
-  const { height: windowHeight } = useWindowSize();
-  const [{ height }, elementRef] = useElementSize();
-
-  const additionalScrollY = windowHeight - height;
+  const { height: windowHeight, width: windowWidth } = useWindowSize();
 
   return (
     <Month
-      contentScrollDuration={CONTENT_SCROLL_DURATION}
+      contentScrollDuration={0}
       scrollSlideStart={START_SCROLL_POSITION}
-      scrollSlideEnd={END_SCROLL_POSITION + additionalScrollY}
-      additionalScrollY={additionalScrollY}
-      scrollRemovalPoint={HIDE_POSITION}
+      scrollSlideEnd={END_SCROLL_POSITION}
+      additionalScrollY={windowWidth + windowHeight}
+      scrollRemovalPoint={Number.MAX_SAFE_INTEGER}
       className="Outro"
     >
-      <div ref={elementRef as Ref<HTMLDivElement>} className="Outro-innerContent">
+      <div className="Outro-innerContent">
         <Achievement title="Congratulations" type={ACHIEVEMENT_TYPE.TROPHY}>
           By reading this text, it means you successfully survived 2020.
           <br />
