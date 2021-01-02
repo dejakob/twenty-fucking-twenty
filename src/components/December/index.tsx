@@ -17,12 +17,6 @@ const December = () => {
   const { width: windowWidth, height: windowHeight } = useWindowSize();
   const photoSize = Math.min(windowWidth, windowHeight);
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.setAttribute('src', 'https://www.tiktok.com/embed.js');
-    document.body.appendChild(script);
-  }, []);
-
   return (
     <Month
       contentScrollDuration={CONTENT_SCROLL_DURATION}
