@@ -1,7 +1,6 @@
 import Month from '../Month';
 import { END_OF_ALL_SCROLL as END_SCROLL_LAST_ITEM } from '../August';
 import Separator from '../Separator';
-import useWindowSize from '../../hooks/useWindowSize';
 import Blog from '../Blog';
 
 import './September.scss';
@@ -14,9 +13,6 @@ export const END_OF_ALL_SCROLL = END_SCROLL_POSITION + 100 + CONTENT_SCROLL_DURA
 export const HIDE_POSITION = END_OF_ALL_SCROLL + 400;
 
 const September = () => {
-  const { width: windowWidth, height: windowHeight } = useWindowSize();
-  const photoSize = Math.min(windowWidth, windowHeight);
-
   return (
     <Month
       contentScrollDuration={CONTENT_SCROLL_DURATION}

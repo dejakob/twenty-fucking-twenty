@@ -16,6 +16,7 @@ const useBodyScroll = (handler: ScrollHandler) => {
       document.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleScroll);
     };
+  /* eslint-disable-next-line */
   }, []);
 
   const handleScroll = useCallback(() => {

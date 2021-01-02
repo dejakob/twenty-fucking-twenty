@@ -1,7 +1,6 @@
 import Month from '../Month';
 import { END_OF_ALL_SCROLL as END_SCROLL_LAST_ITEM } from '../November';
 import Separator from '../Separator';
-import useWindowSize from '../../hooks/useWindowSize';
 import { useEffect } from 'react';
 import Achievement, { TYPES as ACHIEVEMENT_TYPE } from '../Achievement';
 
@@ -12,9 +11,6 @@ export const END_OF_ALL_SCROLL = END_SCROLL_POSITION + 100 + CONTENT_SCROLL_DURA
 export const HIDE_POSITION = END_OF_ALL_SCROLL + 400;
 
 const December = () => {
-  const { width: windowWidth, height: windowHeight } = useWindowSize();
-  const photoSize = Math.min(windowWidth, windowHeight);
-
   useEffect(() => {
     const script = document.createElement('script');
     script.setAttribute('src', 'https://www.tiktok.com/embed.js');
