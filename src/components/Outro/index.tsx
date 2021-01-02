@@ -33,10 +33,10 @@ const Outro = () => {
         <div className="Outro-disclaimerBox">
           <h4 className="Outro-disclaimerTitle">Disclaimer</h4>
           <small className="Outro-disclaimer">
-            Every statement, joke, expression or picture that was posted on this website on social media was done in
-            name of the individual and does not represent any company, government institution or 3rd party.
+            Every statement, joke, expression or picture that was posted on this website or on social media was done in
+            name of the individual and does not represent any company, third party or government institution.
             <br />
-            No animals were harmed during the making of this website.
+            No animals were harmed during the production of this website.
             <br />
             It is recommended to use hand sanitizer and wear a face mask before using this page.
             <br />
