@@ -5,6 +5,7 @@ npm i
 NODE_ENV=production npm run build
 mkdir docs
 cp -R build/* docs
+echo "2020.dejakob.com" > docs/CNAME
 git checkout -b docs
 git add .
 git commit -am 'Build docs'
